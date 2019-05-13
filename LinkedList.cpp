@@ -86,5 +86,3 @@ int LinkedList::size()
 	return count;
 }
 
-LinkedList::~LinkedList() {
-}
