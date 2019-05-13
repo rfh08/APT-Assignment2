@@ -72,7 +72,25 @@ Node* LinkedList::Pop()
 	return temp;
 }
 
-
+Node * LinkedList::Extract(Colour colour, Shape shape)
+{
+	if (head == nullptr) return nullptr;
+	if (head->tile->colour == colour && head->tile->shape == shape)
+		return Pop();
+	Node* temp = head;
+	while (temp->next)
+	{
+		Node* next = temp->next;
+		if (next->tile->colour == colour&&next->tile->shape == shape)
+		{
+			temp->next = next->next;
+			next->next = nullptr;
+			return next;
+		}
+		temp = temp->next;
+	}
+	return nullptr;
+}
 
 int LinkedList::size()
 {
