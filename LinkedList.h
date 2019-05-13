@@ -13,7 +13,7 @@ public:
 
 private:
    Node* head;
-};
+
 
 public:
   //Add a node to the back of the linklist
